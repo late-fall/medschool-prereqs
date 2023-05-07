@@ -1,0 +1,26 @@
+{
+  "name": "medschool-prereqs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build src/style.css -o public/style.css",
+    "watch": "tailwindcss build src/style.css -o public/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/late-fall/medschool-prereqs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/late-fall/medschool-prereqs/issues"
+  },
+  "homepage": "https://github.com/late-fall/medschool-prereqs#readme",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "autoprefixer": "^10.4.14",
+    "tailwindcss": "^3.3.2"
+  }
+}

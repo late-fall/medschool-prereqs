@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    @apply rounded-md py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider bg-navy4 text-white
+}
+
+.input-box{
+    @apply border-2 border-navy4 py-1 px-2 rounded-md w-48 text-center
+}
+
+.input-mcat{
+    @apply border-2 border-navy4 py-1 px-2 rounded-md w-20 text-center
+}
+
+input[type="radio"]:checked + label{
+    @apply border-2 border-navy4 rounded-md
+}
+
+.card {
+    @apply rounded bg-white border-gray-200 shadow-md overflow-hidden hidden
+}
+
+.card-img {
+    @apply h-32 sm:h-48 w-full object-cover
+}
+
+.card-text {
+    @apply block text-gray-800 text-sm
+}
