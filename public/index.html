@@ -12,24 +12,24 @@
 <body class="font-['Comme']">
     <!-- wrapper -->
     <div class="container mx-auto p-6 border-solid border-8 border-navy2 xl:w-8/12 flex flex-col items-center bg-white rounded-xl my-2">
-        <div class="flex self-end px-2 items-center">
-            <input type="radio" class="hidden" id="lang-eng" name="language" value="eng" checked>
-            <label for="lang-eng" class="border-2 border-white p-1">English</label>
-            <input type="radio" class="hidden" id="lang-kor" name="language" value="kor">
-            <label for="lang-kor" class="border-2 border-white p-1">한국어</label>
+        <div class="flex gap-4 justify-between place-self-stretch mb-4 px-2">
+            <img src="img/school2.png" alt="" class="w-10 h-10 md:w-16 md:h-16">
+            <div class="flex self-end px-2 items-center md:text-xl">
+                <input type="radio" class="hidden" id="lang-eng" name="language" value="eng" checked>
+                <label for="lang-eng" class="border-2 border-white p-1">English</label>
+                <input type="radio" class="hidden" id="lang-kor" name="language" value="kor">
+                <label for="lang-kor" class="border-2 border-white p-1">한국어</label>
+            </div>
         </div>
-        <div>
-            <img src="" alt="">
-            <h1 class="text-4xl text-navy3 mb-4">Which Canadian medical schools can I apply?</h1>
-        </div>
+        <h1 class="text-3xl text-navy5 text-center mb-4 md:text-4xl">Can I apply to Canadian medical schools?</h1>
         <div class="container flex flex-col gap-6 md:flex-row text-navy5">
             <div class="md:w-1/2 flex flex-col gap-2 py-2  text-navy4">
                 <div class="flex justify-between px-2 items-center">
                     <div class="flex row items-center gap-2">
                         <label for="years">Undergraduate Years</label>
-                        <img id="info-years" src="img/info-icon.png"  title="Number of undergraduate years to be completed before admission to medical schools." class="w-4 h-4"alt="">
+                        <img id="info-years" src="img/info-icon.png"  title="Number of undergraduate years that will be completed by the time of admission to medical schools." class="w-4 h-4"alt="">
                     </div>
-                    <input class="input-box w-80" type="number" id="years" name="years" placeholder="Years to be completed">
+                    <input class="input-box w-80" type="number" id="years" name="years" placeholder="Years completed">
                 </div>
                 <div class="flex justify-between px-2 items-center">
                     <div class="flex row items-center gap-2">
@@ -86,21 +86,21 @@
                 </div>
                 <div class="content hidden overflow-hidden p-2 bg-navy2 flex flex-col gap-1" id="notes-contents">
                     <p>◽ When years required are 4 years, you need a bachelor's degree before admission to medical schools.</p>
-                    <p>◽ These are based on officially stated minimum from each medical schools website and usual averages are higher.</p>
+                    <p>◽ This tool is based on officially stated minimum requirements from each medical school's website. Averages of matriculants are higher.</p>
                     <p>◽ Non-academic qualities and experiences are also very important but not included here as unable to quantify.</p>
-                    <p>◽ Requirements may change. Please check the official website by clicking school name.</p>
-                    <p>◽ Please refer to this post if you are unsure how to calculate GPA.</p>
+                    <p>◽ Requirements may change. Please check the official website by clicking each school name.</p>
+                    <p>◽ Please refer to <a href="https://www.ouac.on.ca/guide/omsas-conversion-table/" class="underline hover:text-navy1" target="_blank">this post</a> if you are unsure how to calculate GPA.</p>
                     <p class="text-center mt-2 text-navy4">Last updated May 2023</p>
                 </div>
             </div>   
         </div>
-        <div class="mt-4">
-            <button class="btn" type="submit" id="show-btn">Show schools I can apply</button>
+        <div class="mt-4 flex justify-between gap-2">
+            <button class="btn" type="submit" id="show-btn">Show schools I can apply to</button>
             <button class="btn" id="showall-btn">All Schools</button>
         </div>             
         <div class="p-2">
             <div id="noschool" class="mt-2 hidden">
-                <p>There are no eligible medical schools you can apply.</p>
+                <p>There are no eligible medical schools to which you can apply.</p>
             </div>
             <div id="cards" class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
                 <div class="card hidden" id="ubc"> 
