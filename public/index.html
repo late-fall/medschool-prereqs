@@ -5,40 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
+    <script type="module" src="language.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="">
+<body class="font-['Comme']">
     <!-- wrapper -->
-    <div class="container mx-auto p-6 border-solid border-8 border-navy2 xl:w-7/12 flex flex-col items-center bg-white rounded-xl mt-2"> 
+    <div class="container mx-auto p-6 border-solid border-8 border-navy2 xl:w-8/12 flex flex-col items-center bg-white rounded-xl my-2">
+        <div class="flex self-end px-2 items-center">
+            <input type="radio" class="hidden" id="lang-eng" name="language" value="eng" checked>
+            <label for="lang-eng" class="border-2 border-white p-1">English</label>
+            <input type="radio" class="hidden" id="lang-kor" name="language" value="kor">
+            <label for="lang-kor" class="border-2 border-white p-1">한국어</label>
+        </div>
         <div>
             <img src="" alt="">
             <h1 class="text-4xl text-navy3 mb-4">Which Canadian medical schools can I apply?</h1>
         </div>
         <div class="container flex flex-col gap-6 md:flex-row text-navy5">
-            <div class="md:w-1/2 flex flex-col gap-2 py-2">
-                <div class="flex justify-between px-2">
-                    <label for="years" title="Number of undergraduate years to be completed before admission to medical schools.">Undergraduate Years</label>
+            <div class="md:w-1/2 flex flex-col gap-2 py-2  text-navy4">
+                <div class="flex justify-between px-2 items-center">
+                    <div class="flex row items-center gap-2">
+                        <label for="years">Undergraduate Years</label>
+                        <img id="info-years" src="img/info-icon.png"  title="Number of undergraduate years to be completed before admission to medical schools." class="w-4 h-4"alt="">
+                    </div>
                     <input class="input-box w-80" type="number" id="years" name="years" placeholder="Years to be completed">
                 </div>
-                <div class="flex justify-between px-2">
-                    <label for="gpa" title="Grade Point Average">GPA</label>
+                <div class="flex justify-between px-2 items-center">
+                    <div class="flex row items-center gap-2">
+                        <label for="gpa" title="Grade Point Average">GPA</label>
+                        <img src="img/info-icon.png"  id="infogpa" title="Refer to GPA calculator link in Notes if not sure" class="w-4 h-4"alt="">
+                    </div>
                     <input class="input-box" type="number" id="gpa" name="gpa" placeholder="Out of 4.0">
                 </div>
-                <div class="flex justify-between px-2">
-                    <label for="average">Average</label>
+                <div class="flex justify-between px-2 items-center">
+                    <div class="flex row items-center gap-2">
+                        <label for="average">Average</label>
+                        <img src="img/info-icon.png" id="infoavg" title="University of British Columbia and University of Saskatchewan uses % grade." class="w-4 h-4"alt="">
+                    </div>
                     <input class="input-box" type="number" id="avg" name="avg" placeholder="Out of 100%">
                 </div>
-                <div class="flex justify-between px-2">
+                <div class="flex justify-between px-2 items-center">
                     <label for="mcat">MCAT</label>
                     <input class="input-mcat" type="number" title="Biological and Biochemical Foundations of Living Systems" id="bbfl" name="BBFL" placeholder="BBFL">
                     <input class="input-mcat" type="number" title="Chemical and Physical Foundations of Biological systems" id="cpbs" name="CPBS" placeholder="CPBS">
                     <input class="input-mcat" type="number" title="Psychological, Social, and Biological Foundations of Behavior" id="psbb" name="PSBB" placeholder="PSBB">
                     <input class="input-mcat" type="number" title="Critical Analysis and Reasoning Skills" id="cars" name="CARS" placeholder="CARS">
                 </div>
-                <p id="mcattotal" class="px-2" title="Please fill above MCAT scores and submit">MCAT Total : </p>
+                <p id="mcattotal" class="px-2 items-center hidden" title="Please fill above MCAT scores and submit">MCAT Total : </p>
                 <div class="flex justify-between px-2 items-center">
-                    <p>Languages Spoken:</p>
+                    <p id="spokenlang">Languages Spoken:</p>
                     <input type="radio" class="hidden" id="english" name="lang" value="english" checked/>
                     <label for="english" class="border-2 border-white p-1">English</label>
                     <input type="radio" class="hidden" id="french" name="lang" value="french">
@@ -46,17 +62,17 @@
                     <input type="radio" class="hidden" id="bilingual" name="lang" value="bilingual">
                     <label for="bilingual" class="border-2 border-white p-1">Bilingual</label>
                 </div>
-                <select name="residence" id="residence" class="px-2 mx-2 border-2 border-navy5 rounded-md">
+                <select name="residence" id="residence" class="px-2 mx-2 border-2 border-navy5 rounded-md ">
                     <option selected="selected" value="">Select your place of residence</option>
                     <option value="bc">British Columbia</option>
                     <option value="ab">Alberta</option>
                     <option value="sk">Saskatchewan</option>
                     <option value="nb">New Brunswick</option>
                     <option value="ns">Nova Scotia</option>
-                    <option value="other">Other</option>
+                    <option value="other">Other Provinces/Territories</option>
                 </select>
                 <div class="flex justify-between px-2 items-center">
-                    <p>Canadian Citizen or Permanent Resident?</p>
+                    <p id="cdnStatus">Canadian citizen or permanent resident?</p>
                     <input type="radio" class="hidden" id="yes" name="status" value="yes" checked>
                     <label for="yes" class="border-2 border-white p-1">Yes</label>
                     <input type="radio" class="hidden" id="no" name="status" value="no">
@@ -64,25 +80,31 @@
                 </div>
             </div>
             <div class="md:w-1/2 p-2 text-sm">
-                <h4 class="mb-2 underline text-xl">Notes</h4>
-                <p>◽ When years required are 4 years, you need a bachelor's degree before admission to medical schools.</p>
-                <p>◽ These are based on officially stated minimum from each medical schools website and usual averages are higher.</p>
-                <p>◽ Non-academic qualities and experiences are also very important but not included here as unable to quantify.</p>
-                <p>◽ Requirements may change. Please check the official website by clicking school name.</p>
-                <p class="text-center mt-2 text-navy4">Last updated May 2023</p>
+                <div class="text-md bg-navy3 text-white flex items-center justify-between cursor-pointer hover:bg-navy4" id="notes-title">                
+                    <h4 id="note-title" class="px-2 py-1">Notes</h4>
+                    <h4 class="px-2 py-1 text-2xl" id="toggle">+</h4>
+                </div>
+                <div class="content hidden overflow-hidden p-2 bg-navy2 flex flex-col gap-1" id="notes-contents">
+                    <p>◽ When years required are 4 years, you need a bachelor's degree before admission to medical schools.</p>
+                    <p>◽ These are based on officially stated minimum from each medical schools website and usual averages are higher.</p>
+                    <p>◽ Non-academic qualities and experiences are also very important but not included here as unable to quantify.</p>
+                    <p>◽ Requirements may change. Please check the official website by clicking school name.</p>
+                    <p>◽ Please refer to this post if you are unsure how to calculate GPA.</p>
+                    <p class="text-center mt-2 text-navy4">Last updated May 2023</p>
+                </div>
             </div>   
         </div>
         <div class="mt-4">
-            <button class="btn" type="submit" id="show-btn">Show schools</button>
+            <button class="btn" type="submit" id="show-btn">Show schools I can apply</button>
             <button class="btn" id="showall-btn">All Schools</button>
         </div>             
         <div class="p-2">
-            <!-- <table class="table-fixed">
-                <thead></thead>
-                <tbody></tbody>
-            </table> -->
-            <div class="mt-8 grid lg:grid-cols-3 gap-10">
-                <div class="card"> 
+            <div id="noschool" class="mt-2 hidden">
+                <p>There are no eligible medical schools you can apply.</p>
+            </div>
+            <div id="cards" class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                <div class="card hidden" id="ubc"> 
+                    <a href="https://mdprogram.med.ubc.ca/admissions/" target="_blank">
                     <img src="img/ubc.jpg" alt="ubc" class="card-img">
                     <div class="m-4">
                       <span class="font-bold">University of British Columbia</span>
@@ -91,8 +113,10 @@
                       <span class="card-text">Minimum MCAT : 124 all sections</span>
                       <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="ua"> 
+                    <a href="https://www.ualberta.ca/medicine/programs/md/applying-to-medicine/before-you-apply/application-requirements.html" target="_blank">
                     <img src="img/ua.jpg" alt="ua" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">University of Alberta</span>
@@ -101,8 +125,10 @@
                         <span class="card-text">Minimum MCAT : 124 all sections AB, CARS 128 for OOP</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="uc"> 
+                    <a href="https://cumming.ucalgary.ca/mdprogram/future-students/admissions" target="_blank">
                     <img src="img/uc.jpeg" alt="uc" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">University of Calgary</span>
@@ -111,8 +137,10 @@
                         <span class="card-text">Minimum MCAT : CARS 128 for OOP</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="us"> 
+                    <a href="https://admissions.usask.ca/medicine.php#About" target="_blank">
                     <img src="img/us.jpeg" alt="us" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">University of Saskatchewan</span>
@@ -121,8 +149,10 @@
                         <span class="card-text">Minimum MCAT : 123 all sections, total 492. One section can be 122.</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="um"> 
+                    <a href="https://umanitoba.ca/explore/programs-of-study/medicine-md" target="_blank">
                     <img src="img/um.jpg" alt="um" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">University of Manitoba</span>
@@ -131,8 +161,10 @@
                         <span class="card-text">Minimum MCAT : No stated minimum</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="nosm"> 
+                    <a href="https://www.nosm.ca/education/md-program/" target="_blank">
                     <img src="img/nosm.jpg" alt="nosm" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">Northern Ontario School of Medicine</span>
@@ -141,8 +173,10 @@
                         <span class="card-text">Minimum MCAT : Not Required</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="western"> 
+                    <a href="https://www.schulich.uwo.ca/med_dent_admissions/" target="_blank">
                     <img src="img/western.jpg" alt="western" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">Western University</span>
@@ -151,8 +185,10 @@
                         <span class="card-text">Minimum MCAT : No stated minimum</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="mcmaster"> 
+                    <a href="https://ugme.healthsci.mcmaster.ca/admissions/" target="_blank">
                     <img src="img/mcamster.jpg" alt="mcamster" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">McMaster University</span>
@@ -161,8 +197,10 @@
                         <span class="card-text">Minimum MCAT : CARS minimum 123</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Not Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="ut"> 
+                    <a href="https://applymd.utoronto.ca/" target="_blank">
                     <img src="img/ut.jpg" alt="ut" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">University of Toronto</span>
@@ -171,8 +209,10 @@
                         <span class="card-text">Minimum MCAT : 125 all sections, one can be 124</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Not Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="queens"> 
+                    <a href="https://meds.queensu.ca/academics/undergraduate/admissions" target="_blank">
                     <img src="img/queens.jpeg" alt="queens" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">Queen's University</span>
@@ -181,8 +221,10 @@
                         <span class="card-text">Minimum MCAT : No stated minimum</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Not Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="ottawa"> 
+                    <a href="https://www.uottawa.ca/faculty-medicine/" target="_blank">
                     <img src="img/ottawa.jpg" alt="ottawa" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">University of Ottawa</span>
@@ -191,8 +233,10 @@
                         <span class="card-text">Minimum MCAT : Not Required</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="mcgill"> 
+                    <a href="https://www.mcgill.ca/medadmissions/applying/requirements" target="_blank">
                     <img src="img/mcgill.jpg" alt="mcgill" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">University of McGill</span>
@@ -201,8 +245,10 @@
                         <span class="card-text">Minimum MCAT : No stated minimum</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Not Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="udm"> 
+                    <a href="https://medecine.umontreal.ca/etudes/etudes-en-medecine/doctorat-en-medecine/admission/" target="_blank">
                     <img src="img/udm.jpg" alt="udm" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">Université de Montréal</span>
@@ -211,8 +257,10 @@
                         <span class="card-text">Minimum MCAT : Not Required</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Not Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="uds"> 
+                    <a href="https://www.usherbrooke.ca/etudes-medecine/programmes-detudes/doctorat-en-medecine/admission" target="_blank">
                     <img src="img/sherbrooke.jpg" alt="uds" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">Université de Sherbrooke</span>
@@ -221,8 +269,10 @@
                         <span class="card-text">Minimum MCAT : Not Required</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Not Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="udl"> 
+                    <a href="https://www.fmed.ulaval.ca/etudes/etudes-en-medecine/doctorat-de-1er-cycle-en-medecine/admission/" target="_blank">
                     <img src="img/udl.jpg" alt="udl" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">Université de Laval</span>
@@ -231,8 +281,10 @@
                         <span class="card-text">Minimum MCAT : Not Required</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="dal"> 
+                    <a href="https://medicine.dal.ca/departments/core-units/admissions.html" target="_blank">
                     <img src="img/dal.jpeg" alt="dal" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">Dalhousie University</span>
@@ -241,8 +293,10 @@
                         <span class="card-text">Minimum MCAT : 123 all sections, uses sliding scale.</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
-                <div class="card"> 
+                <div class="card hidden" id="mun"> 
+                    <a href="https://www.mun.ca/medicine/administrative-departments/admissions/undergraduate-md-program/" target="_blank">
                     <img src="img/mun.jpg" alt="mun" class="card-img">
                     <div class="m-4">
                         <span class="font-bold">Memorial University of Newfoundland</span>
@@ -251,6 +305,7 @@
                         <span class="card-text">Minimum MCAT : No stated minimum</span>
                         <span class="card-text">Canadian Citizen or Permanent Resident? Required</span>
                     </div>
+                </a>
                 </div>
             </div>            
         </div>

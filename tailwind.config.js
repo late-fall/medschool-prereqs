@@ -18,6 +18,9 @@ module.exports = {
         navy1 : "#E0E1DD"
       }
     },
+    fontFamily: {
+      'kor' : ['Noto Sans KR']
+    }
   },
   plugins: [
     require('@tailwindcss/forms'),
