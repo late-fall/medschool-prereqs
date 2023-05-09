@@ -350,3 +350,8 @@ function muninfo(){
     mun.classList.add('hidden')
     mun.classList.remove('hidden')
 }
+
+//disable right click
+window.addEventListener('contextmenu', function (e) { 
+    e.preventDefault(); 
+  }, false);
