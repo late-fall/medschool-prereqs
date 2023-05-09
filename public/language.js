@@ -52,8 +52,6 @@ function langKor() {
     showBtn.innerHTML = "내가 지원 할 수 있는 의대는?"
     showallBtn.innerHTML = "모든의대 보기"
     noschool.innerHTML = "지원 가능한 의대가 없습니다."
-    body.classList.remove("font-['Comme']")
-    body.classList.add("font-kor")
 }
 
 function langEng() {
@@ -79,6 +77,4 @@ function langEng() {
     showBtn.innerHTML = "Show schools I can apply to"
     showallBtn.innerHTML = "All schools"
     noschool.innerHTML = "There are no eligible medical schools to which you can apply."
-    body.classList.remove("font-kor")
-    body.classList.add("font-['Comme']")
 }
