@@ -785,6 +785,21 @@ select{
   width: 20rem;
 }
 
+.min-w-min{
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+
+.min-w-max{
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
+.min-w-fit{
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
 .max-w-full{
   max-width: 100%;
 }
