@@ -790,16 +790,6 @@ select{
   min-width: min-content;
 }
 
-.max-w-fit{
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-}
-
-.max-w-max{
-  max-width: -moz-max-content;
-  max-width: max-content;
-}
-
 .max-w-full{
   max-width: 100%;
 }
@@ -864,10 +854,6 @@ select{
   border-width: 2px;
 }
 
-.border-8{
-  border-width: 8px;
-}
-
 .border-4{
   border-width: 4px;
 }
@@ -917,10 +903,6 @@ select{
 
 .p-2{
   padding: 0.5rem;
-}
-
-.p-6{
-  padding: 1.5rem;
 }
 
 .p-4{
@@ -1001,8 +983,8 @@ select{
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   --tw-text-opacity: 1;

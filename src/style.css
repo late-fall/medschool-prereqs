@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 .btn {
-    @apply rounded-md py-2 px-3 uppercase text-sm cursor-pointer tracking-wider bg-navy3 text-white hover:bg-navy4 transition ease-out duration-500 active:translate-y-1
+    @apply rounded-md py-2 px-3 uppercase text-xs cursor-pointer tracking-wider bg-navy3 text-white hover:bg-navy4 transition ease-out duration-500 active:translate-y-1
 }
 
 .input-box{
