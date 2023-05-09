@@ -35,7 +35,7 @@ function langKor() {
     infoYears.setAttribute("title", "의대 입학하기전에 대학교 몇학년까지 마칠 예정입니까?")
     infogpa.setAttribute("title", "본인 GPA를 모른다면 아래 참조 섹션에 링크된 다른 포스트에 계산법이 있습니다.")
     average.innerHTML = "평균 %"
-    infoavg.setAttribute("title", "유비씨의대와 사스카치완 의대는 GPA 대신 % 평균으로 계산합니다.")
+    infoavg.setAttribute("title", "유비씨의대와 사스카츄완 의대는 GPA 대신 % 평균으로 계산합니다.")
     mcattotal.setAttribute("title", "MCAT 스코어를 적어주시면 자동으로 계산됩니다.")
     spokenlang.innerHTML = "언어 :"
     resSelect.innerHTML = "의대 지원 당시 거주지"
